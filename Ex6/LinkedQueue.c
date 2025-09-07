@@ -35,7 +35,7 @@ void enLQueue(LQueueType* LQ, element item){
 element deLQueue(LQueueType* LQ){
     QNode* old = LQ -> front;
     element item;
-    if(isLQEmpty(LQ)) return ;
+    if(isLQEmpty(LQ)) return 0;
     else{
         item = old -> data;
         LQ -> front = LQ -> front -> link;
@@ -48,7 +48,7 @@ element deLQueue(LQueueType* LQ){
 
 element peekLQ(LQueueType* LQ){
     element item;
-    if(isLQEmpty(LQ)) return ;
+    if(isLQEmpty(LQ)) return 0;
     else{
         item = LQ -> front -> data;
         return item;

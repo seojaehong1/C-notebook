@@ -16,9 +16,11 @@ int isStackFull() {
 void push(element item) {
     if(isStackFull()) {
         printf("Stack is full!\n");
-        return 0;
+        return;
     }
-    else return stack[top];
+    else {
+        stack[++top] = item;
+    }
 }
 
 element pop(void) {

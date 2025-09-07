@@ -11,7 +11,15 @@ QueueType* createQueue(void){
 }
 
 int isQueueEmpty(QueueType* Q){
-    if(Q -> rear == Q_SIZE -1){
+    if(Q -> front == Q -> rear){
+        printf("Queue is empty\n\t");
+        return 1;
+    }
+     else return 0;
+}
+
+int isQueueFull(QueueType* Q){
+    if(Q -> rear == Q_SIZE - 1){
         printf("Queue is full\n\t");
         return 1;
     }
@@ -19,7 +27,7 @@ int isQueueEmpty(QueueType* Q){
 }
 
 void enQueue(QueueType* Q, element item){
-    if(isQueueFull(Q)) return 0;
+    if(isQueueFull(Q)) return;
     else{
         Q -> rear++;
         Q -> queue[Q->rear] = item;
@@ -47,6 +55,6 @@ void printQ(QueueType* Q){
     printf("Queue : [");
     for(i = Q -> front + 1; i <= Q -> rear; i++){
         printf("%3c ", Q -> queue[i]);
-    printf(" ]");
     }
+    printf(" ]");
 }

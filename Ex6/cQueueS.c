@@ -18,6 +18,14 @@ int isCQueueEmpty(QueueType* cQ){
      else return 0;
 }
 
+int isCQueueFull(QueueType* cQ){
+    if((cQ -> rear + 1) % cQ_SIZE == cQ -> front){
+        printf("CQueue is full!");
+        return 1;
+    }
+     else return 0;
+}
+
 void enCQueue(QueueType* cQ, element item){
     if(isCQueueFull(cQ)) return;
     else{
@@ -27,7 +35,7 @@ void enCQueue(QueueType* cQ, element item){
 }
 
 element deCQueue(QueueType* cQ){
-    if(isCQueueEmpty(cQ)) return;
+    if(isCQueueEmpty(cQ)) return 0;
     else{
         cQ -> front = (cQ -> front + 1) % cQ_SIZE;
         return cQ -> queue[cQ->front];
@@ -35,7 +43,7 @@ element deCQueue(QueueType* cQ){
 }
 
 element peekCQ(QueueType* cQ){
-    if(isCQueueEmpty(cQ)) return;
+    if(isCQueueEmpty(cQ)) return 0;
     else{
         return cQ -> queue[(cQ->front + 1) % cQ_SIZE];
     }

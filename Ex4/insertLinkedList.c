@@ -1,4 +1,6 @@
-#define _CRT_SECURE_NO_WARINGS
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "InsertLinkedList.h"
 
@@ -21,7 +23,7 @@ void freeLinkedList_h(linkedList_h* L){
 
 void printList(linkedList_h* L){
     listNode* p;
-    printf("L = ()");
+    printf("L = (");
     p = L -> head;
     while (p != NULL)
     {
@@ -65,7 +67,7 @@ void insertLastNode(linkedList_h* L, char *x){
     newNode = (listNode*)malloc(sizeof(listNode));
     strcpy(newNode -> data, x);
     newNode -> link = NULL;
-    if(L -> head = NULL){
+    if(L -> head == NULL){
         L -> head = newNode;
         return;
     }

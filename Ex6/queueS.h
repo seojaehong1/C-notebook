@@ -1,8 +1,7 @@
-#pragma once
 #define Q_SIZE 4
 typedef char element;
 
-typedef struct{
+typedef struct {
     element queue[Q_SIZE];
     int front, rear;
 } QueueType;

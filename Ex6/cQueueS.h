@@ -1,6 +1,4 @@
-#pragma once
 #define cQ_SIZE 4
-
 typedef char element;
 
 typedef struct {
@@ -15,4 +13,3 @@ void enCQueue(QueueType* cQ, element item);
 element deCQueue(QueueType* cQ);
 element peekCQ(QueueType* cQ);
 void printCQ(QueueType* cQ);
-
